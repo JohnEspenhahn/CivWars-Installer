@@ -41,7 +41,7 @@
 /*     */ 
 /*     */   public static String getVersionTarget()
 /*     */   {
-/*  49 */     return INSTANCE.versionData.getStringValue(new Object[] { "install", "target" });
+/*  49 */     return INSTANCE.versionData.getStringValue(new Object[] { "versionInfo", "id" });
 /*     */   }
 /*     */ 
 /*     */   public static File getLibraryPath(File root) {

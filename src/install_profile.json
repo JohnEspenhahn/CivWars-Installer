@@ -185,13 +185,12 @@
         "mainClass": "net.minecraft.launchwrapper.Launch",
         "minimumLauncherVersion": 4,
         "time": "2013-07-24T16:21:53-0500",
-        "id": "1.6.2-Forge9.10.0.804",
         "type": "release",
         "processArguments": "username_session_version",
-        "releaseTime": "1960-01-01T00:00:00-0700"
+        "releaseTime": "2013-08-18T06:02:00-0700",
+		"id": "1.6.2-CivWars0.1.0",
     },
     "install": {
-        "target": "1.6.2-CivWars0.1.0",
         "filePath": "minecraftforge-universal-1.6.2-9.10.0.804.jar",
 		"civwarsFile": "CivWars-0.1.0.jar",
         "logo": "/big_logo.png",
