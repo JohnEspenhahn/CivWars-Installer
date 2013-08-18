@@ -182,7 +182,7 @@
  
    public String getSuccessMessage()
    {
-     return String.format("Successfully installed client profile %s for version %s into launcher", new Object[] { VersionInfo.getProfileName(), VersionInfo.getTitle() });
+     return String.format("Successfully installed client profile %s for version %s into launcher", new Object[] { VersionInfo.getProfileName(), VersionInfo.getVersion() });
    }
  }
 

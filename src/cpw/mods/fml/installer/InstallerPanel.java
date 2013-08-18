@@ -56,7 +56,7 @@
 /*  93 */     tag.setAlignmentX(0.5F);
 /*  94 */     tag.setAlignmentY(0.5F);
 /*  95 */     logoSplash.add(tag);
-/*  96 */     tag = new JLabel(VersionInfo.getTitle());
+/*  96 */     tag = new JLabel(VersionInfo.getVersion());
 /*  97 */     tag.setAlignmentX(0.5F);
 /*  98 */     tag.setAlignmentY(0.5F);
 /*  99 */     logoSplash.add(tag);
