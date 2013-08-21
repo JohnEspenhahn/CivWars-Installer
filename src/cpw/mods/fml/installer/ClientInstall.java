@@ -105,14 +105,6 @@ public class ClientInstall implements ActionType {
 	    return false;
 	}
 	
-	File hahnAPIFile = new File(modsFolder, VersionInfo.getHahnAPIFile());
-	try {
-	    VersionInfo.extractHahnAPIFile(hahnAPIFile);
-	} catch (Exception e) {
-	    JOptionPane.showMessageDialog(null, "There was a problem extracting hahnAPI into the mods folder.", "Error", 0);
-	    return false;
-	}
-	
 	File civwarsFolder = new File(target, "civwars");
 	try {
 	    civwarsFolder.delete();
@@ -123,10 +115,12 @@ public class ClientInstall implements ActionType {
 	}
 	
 	File civwarsFile = new File(civwarsFolder, VersionInfo.getCivWarsFile());
+	File hahnAPIFile = new File(civwarsFolder, VersionInfo.getHahnAPIFile());
 	try {
 	    VersionInfo.extractCivWarsFile(civwarsFile);
+	    VersionInfo.extractHahnAPIFile(hahnAPIFile);
 	} catch (Exception e) {
-	    JOptionPane.showMessageDialog(null, "There was a problem extracting the civwars into the civwars folder.", "Error", 0);
+	    JOptionPane.showMessageDialog(null, "There was a problem extracting civwars into the civwars folder.", "Error", 0);
 	    return false;
 	}
 
