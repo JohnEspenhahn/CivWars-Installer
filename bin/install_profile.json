@@ -1,7 +1,11 @@
 {
     "versionInfo": {
-        "minecraftArguments": "--username ${auth_player_name} --session ${auth_session} --version ${version_name} --gameDir ${game_directory} --assetsDir ${game_assets} --tweakClass cpw.mods.fml.common.launcher.FMLTweaker",
+        "minecraftArguments": "--username ${auth_player_name} --session ${auth_session} --version ${version_name} --gameDir ${game_directory} --assetsDir ${game_assets} --tweakClass cpw.mods.fml.common.launcher.FMLTweaker --cascadedTweaks com.hahn.CivWars.server.CivWarsTweaker",
         "libraries": [
+			{
+				"url": "http://civwars.info/",
+				"name": "com.hahn.civwarstweaker:civwarstweaker:0.0.1"
+			},
             {
                 "url": "http://files.minecraftforge.net/maven/",
                 "name": "net.minecraftforge:minecraftforge:9.10.0.804"
@@ -184,18 +188,21 @@
         ],
         "mainClass": "net.minecraft.launchwrapper.Launch",
         "minimumLauncherVersion": 4,
-        "time": "2013-07-24T16:21:53-0500",
+        "time": "2013-08-21T10:36:00-0700",
         "type": "release",
         "processArguments": "username_session_version",
-        "releaseTime": "2013-08-18T06:02:00-0700",
-		"id": "1.6.2-CivWars0.1.0",
+        "releaseTime": "2013-08-21T10:36:00-0700",
+		"id": "1.6.2-CivWars0.1.1",
     },
     "install": {
-        "filePath": "minecraftforge-universal-1.6.2-9.10.0.804.jar",
-		"civwarsFile": "CivWars-0.1.0.jar",
-        "logo": "/big_logo.png",
+		"logo": "/big_logo.png",
         "welcome": "Welcome to the CivWars Forge installer.",
-        "version": "CivWars 0.1.0 | Forge 9.10.0.804",
+        "version": "CivWars 0.1.1 | Forge 9.10.0.804",
+		"civwarsFile": "CivWars-0.1.1.jar",
+		"hahnAPIFile": "HahnAPI-0.5.3.jar",
+		"civwarsTweakerFile": "CivWarsTweaker-0.0.1.jar",
+		"civwarsTweakerPath": "com.hahn.civwarstweaker:civwarstweaker:0.0.1",
+		"filePath": "minecraftforge-universal-1.6.2-9.10.0.804.jar",
         "path": "net.minecraftforge:minecraftforge:9.10.0.804",
         "profileName": "CivWars",
         "minecraft": "1.6.2"
