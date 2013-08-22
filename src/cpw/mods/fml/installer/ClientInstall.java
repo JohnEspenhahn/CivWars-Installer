@@ -85,63 +85,25 @@ public class ClientInstall implements ActionType {
 	} catch (Exception e) {
 	    throw Throwables.propagate(e);
 	}
-
-	File modsFolder = new File(target, "mods");
-	try {
-	    if (modsFolder.exists()) {
-		if (!modsFolder.isDirectory()) {
-		    modsFolder.delete();
-		} else {
-		    for (File f : modsFolder.listFiles()) {
-			String name = f.getName().toLowerCase();
-			if (name.contains("civwars") || name.contains("hahnapi")) {
-			    f.delete();
-			}
-		    }
-		}
-	    }
-	} catch (Exception e) {
-	    JOptionPane.showMessageDialog(null, "There was a problem removing old CivWars versions from the mods folder.", "Error", 0);
-	    return false;
-	}
 	
-	File civwarsFolder = new File(target, "civwars");
-	try {
-	    civwarsFolder.delete();
-	    civwarsFolder.mkdir();
-	} catch (Exception e) {
-	    JOptionPane.showMessageDialog(null, "There was a problem initializing the civwars folder.", "Error", 0);
-	    return false;
-	}
+	File civwarsFolder = new File(System.getProperty("user.home"), ".civwars");
+	File civwarsMods = new File(civwarsFolder, "mods");
+	civwarsMods.delete();
+	civwarsMods.mkdirs();
 	
-	File civwarsFile = new File(civwarsFolder, VersionInfo.getCivWarsFile());
-	File hahnAPIFile = new File(civwarsFolder, VersionInfo.getHahnAPIFile());
+	File civwarsFile = new File(civwarsMods, VersionInfo.getCivWarsFile());
 	try {
 	    VersionInfo.extractCivWarsFile(civwarsFile);
-	    VersionInfo.extractHahnAPIFile(hahnAPIFile);
 	} catch (Exception e) {
-	    JOptionPane.showMessageDialog(null, "There was a problem extracting civwars into the civwars folder.", "Error", 0);
+	    JOptionPane.showMessageDialog(null, "There was a problem extracting Civwars into the Civwars folder.", "Error", 0);
 	    return false;
 	}
 
-	File civWarstargetLibraryFile = VersionInfo.getCivWarsLibraryPath(new File(target, "libraries"));
-	if ((!civWarstargetLibraryFile.getParentFile().mkdirs()) && (!civWarstargetLibraryFile.getParentFile().isDirectory())) {
-	    if (!civWarstargetLibraryFile.getParentFile().delete()) {
-		JOptionPane.showMessageDialog(null, "There was a problem with the launcher version data. You will need to clear " + civWarstargetLibraryFile.getAbsolutePath() + " manually", "Error", 0);
-		return false;
-	    }
-
-	    civWarstargetLibraryFile.getParentFile().mkdirs();
-	}
-
-	try {
-	    VersionInfo.extractCivWarsTweakerFile(civWarstargetLibraryFile);
-	} catch (Exception e) {
-	    JOptionPane.showMessageDialog(null, "There was a problem extracting CivWars to its library folder.", "Error", 0);
-	    return false;
-	}
-
-	JsonField[] fields = { JsonNodeFactories.field("name", JsonNodeFactories.string(VersionInfo.getProfileName())), JsonNodeFactories.field("lastVersionId", JsonNodeFactories.string(VersionInfo.getVersionTarget())) };
+	JsonField[] fields = { 
+		JsonNodeFactories.field("name", JsonNodeFactories.string(VersionInfo.getProfileName())), 
+		JsonNodeFactories.field("lastVersionId", JsonNodeFactories.string(VersionInfo.getVersionTarget())),
+		JsonNodeFactories.field("gameDir", JsonNodeFactories.string(civwarsFolder.getAbsolutePath()))
+	};
 
 	HashMap profileCopy = Maps.newHashMap(jsonProfileData.getNode(new Object[] { "profiles" }).getFields());
 	HashMap rootCopy = Maps.newHashMap(jsonProfileData.getFields());

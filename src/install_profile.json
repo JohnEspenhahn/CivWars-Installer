@@ -1,14 +1,10 @@
 {
     "versionInfo": {
-        "minecraftArguments": "--username ${auth_player_name} --session ${auth_session} --version ${version_name} --gameDir ${game_directory} --assetsDir ${game_assets} --tweakClass cpw.mods.fml.common.launcher.FMLTweaker --cascadedTweaks com.hahn.CivWars.server.CivWarsTweaker",
+        "minecraftArguments": "--username ${auth_player_name} --session ${auth_session} --version ${version_name} --gameDir ${game_directory} --assetsDir ${game_assets} --tweakClass cpw.mods.fml.common.launcher.FMLTweaker",
         "libraries": [
-			{
-				"url": "http://civwars.info/",
-				"name": "com.hahn.civwarstweaker:civwarstweaker:0.0.1"
-			},
             {
                 "url": "http://files.minecraftforge.net/maven/",
-                "name": "net.minecraftforge:minecraftforge:9.10.0.804"
+                "name": "com.hahn.civwars:minecraftforge:9.10.0.804"
             },
             {
                 "serverreq": true,
@@ -199,11 +195,8 @@
         "welcome": "Welcome to the CivWars Forge installer.",
         "version": "CivWars 0.1.1 | Forge 9.10.0.804",
 		"civwarsFile": "CivWars-0.1.1.jar",
-		"hahnAPIFile": "HahnAPI-0.5.3.jar",
-		"civwarsTweakerFile": "CivWarsTweaker-0.0.1.jar",
-		"civwarsTweakerPath": "com.hahn.civwarstweaker:civwarstweaker:0.0.1",
 		"filePath": "minecraftforge-universal-1.6.2-9.10.0.804.jar",
-        "path": "net.minecraftforge:minecraftforge:9.10.0.804",
+        "path": "com.hahn.civwars:minecraftforge:9.10.0.804",
         "profileName": "CivWars",
         "minecraft": "1.6.2"
     }

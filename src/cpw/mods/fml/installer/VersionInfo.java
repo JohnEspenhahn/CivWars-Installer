@@ -73,46 +73,17 @@ public class VersionInfo {
     public static String getContainedFile() {
 	return INSTANCE.versionData.getStringValue(new Object[] { "install", "filePath" });
     }
-    
-    public static String getHahnAPIFile() {
-	return INSTANCE.versionData.getStringValue(new Object[] { "install", "hahnAPIFile" });
-    }
 
     public static String getCivWarsFile() {
 	return INSTANCE.versionData.getStringValue(new Object[] { "install", "civwarsFile" });
     }
-    
-    public static String getCivWarsTweakerFile() {
-	return INSTANCE.versionData.getStringValue(new Object[] { "install", "civwarsTweakerFile" });
-    }
-    
-    public static File getCivWarsLibraryPath(File root) {
-   	String path = INSTANCE.versionData.getStringValue(new Object[] { "install", "civwarsTweakerPath" });
-   	String[] split = (String[]) Iterables.toArray(Splitter.on(':').omitEmptyStrings().split(path), String.class);
-   	File dest = root;
-   	Iterable<String> subSplit = Splitter.on('.').omitEmptyStrings().split(split[0]);
-   	for (String part : subSplit) {
-   	    dest = new File(dest, part);
-   	}
-   	dest = new File(new File(dest, split[1]), split[2]);
-   	String fileName = split[1] + "-" + split[2] + ".jar";
-   	return new File(dest, fileName);
-   }
 
     public static void extractFile(File path) throws IOException {
 	INSTANCE.doFileExtract(getContainedFile(), path);
     }
     
-    public static void extractHahnAPIFile(File path) throws IOException {
-	INSTANCE.doFileExtract(getHahnAPIFile(), path);
-    }
-    
     public static void extractCivWarsFile(File path) throws IOException {
 	INSTANCE.doFileExtract(getCivWarsFile(), path);
-    }
-
-    public static void extractCivWarsTweakerFile(File path) throws IOException {
-	INSTANCE.doFileExtract(getCivWarsTweakerFile(), path);
     }
 
     private void doFileExtract(String src, File path) throws IOException {
