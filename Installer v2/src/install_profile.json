@@ -201,18 +201,18 @@
         "mainClass": "net.minecraft.launchwrapper.Launch",
         "minimumLauncherVersion": 4,
         "time": "2013-11-16T18:31:04-0500",
-        "id": "1.6.4-CivWars1.6.4",
+        "id": "1.6.4-CivWars1.7.0",
         "type": "release",
         "processArguments": "username_session_version",
         "releaseTime": "1960-01-01T00:00:00-0700"
     },
     "install": {
         "mirrorList": "http://files.minecraftforge.net/mirror-brand.list",
-        "target": "1.6.4-CivWars1.6.4",
+        "target": "1.6.4-CivWars1.7.0",
         "filePath": "minecraftforge-universal-1.6.4-9.11.1.953.jar",
         "logo": "/big_logo.png",
         "welcome": "Welcome to the CivWars installer.",
-        "version": "CivWars 1.6.4 | Forge 9.11.1.953",
+        "version": "CivWars 1.7.0 | Forge 9.11.1.953",
         "path": "net.minecraftforge:minecraftforge:9.11.1.953",
         "profileName": "CivWars",
         "minecraft": "1.6.4"
