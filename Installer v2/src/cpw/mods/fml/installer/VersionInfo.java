@@ -37,7 +37,7 @@ public class VersionInfo {
     }
 
     public static String getVersionTarget() {
-        return VersionInfo.INSTANCE.versionData.getStringValue(new Object[] { "install", "target" });
+        return VersionInfo.INSTANCE.versionData.getStringValue(new Object[] { "versionInfo", "id" });
     }
 
     public static File getLibraryPath(File root) {
